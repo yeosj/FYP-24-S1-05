@@ -32,7 +32,7 @@ Be sure that you are at the same directory as app.js
   - run in terminal: eas build:run -p android
 
 
-- Installation for Suricata
+Suricata Installation
 Before Suricata can be used it has to be installed. Suricata can be installed on various distributions using binary packages
 Follow suricata documentation for installation process.
 
