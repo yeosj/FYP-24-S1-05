@@ -129,7 +129,9 @@ const SignUp = ({ navigation }) => {
           firstName: firstName,
           lastName: lastName,
           email: email,
+          userRole: "system admin",
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          isActive: true, // Default to true when registering new devices
         });
       // Send email verification
       await userCredential.user.sendEmailVerification();
@@ -146,6 +148,10 @@ const SignUp = ({ navigation }) => {
     } catch (error) {
       // Handle sign-up errors
       console.error("Error signing up:", error.message);
+      Alert.alert(
+        "Error",
+        "Failed to create user account. Please try again later."
+      );
     }
   }
   async function checkEmailExists(email) {
