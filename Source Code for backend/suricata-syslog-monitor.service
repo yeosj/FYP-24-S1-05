@@ -1,0 +1,16 @@
+
+
+[Unit]
+Description=Suricata Monitoring Service
+After=network.target
+
+[Service]
+ExecStart=/home/chengyichua/.nvm/versions/node/v16.20.2/bin/node /opt/suricata/syslog_monitor_and_upload.js
+Restart=always
+User=chengyichua
+Environment=PATH=/usr/bin:/usr/local/bin
+WorkingDirectory=/opt/suricata
+
+[Install]
+WantedBy=multi-user.target
+

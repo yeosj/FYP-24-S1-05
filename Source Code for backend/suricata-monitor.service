@@ -1,0 +1,16 @@
+  GNU nano 2.5.3                                     File: /etc/systemd/system/suricata-monitor.service                                                                                 
+
+[Unit]
+Description=Suricata Monitoring Service
+After=network.target
+
+[Service]
+ExecStart=/home/chengyichua/.nvm/versions/node/v16.20.2/bin/node /opt/suricata/upload_eve.js
+Restart=always
+User=chengyichua
+Environment=PATH=/usr/bin:/usr/local/bin
+WorkingDirectory=/opt/suricata
+
+[Install]
+WantedBy=multi-user.target
+
